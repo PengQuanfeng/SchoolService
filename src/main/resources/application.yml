@@ -1,0 +1,26 @@
+server:
+  port: 9099    #port number
+#port: 9098
+swagger:
+  base-package: elephant.studentservice.student
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+
+spring:
+  application:
+    name: school-service    #service name
+  zipkin:
+    base-url: http://localhost:8081
+
+logging:
+  level:
+    com.example.howtodoinjava: DEBUG
